@@ -40,8 +40,6 @@ class Balablu {
       if (randomNum != _expectedNum) {
         continue;
       }
-      // count++;
-      // print("Balablue: $count");
       await player.play(AssetSource('balablu.mp3'));
 
       //Lets the audio play completely before starting the next loop.
