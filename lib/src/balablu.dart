@@ -3,6 +3,8 @@ library balablu;
 import 'dart:math';
 
 import 'package:audioplayers/audioplayers.dart';
+import 'package:shake/shake.dart';
+import 'package:vibration/vibration.dart';
 
 /// Determines how often in a seconds an event occurs
 class Frequency {
@@ -27,13 +29,26 @@ extension FrequencyToSeconds on int {
 
 class Balablu {
   static const _expectedNum = 1;
+  static bool isEnabled = true;
 
   static Future<void> init({
     Frequency frequency = Frequencies.veryLow,
   }) async {
     final player = AudioPlayer();
-    // int count = 0;
-    while (true) {
+    ShakeDetector.autoStart(
+      onPhoneShake: () async {
+        isEnabled = !isEnabled;
+        if (await Vibration.hasVibrator() ?? false) {
+          Vibration.vibrate();
+        }
+        if(isEnabled) await _runBalablu(frequency, player);
+      },
+    );
+    await _runBalablu(frequency, player);
+  }
+
+  static Future<void> _runBalablu(Frequency frequency, AudioPlayer player) async {
+    while (isEnabled) {
       await Future.delayed(const Duration(milliseconds: 1000));
       var randomNum = Random().nextInt(frequency.milliHertz.sec - 1) + 1;
 
