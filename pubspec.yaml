@@ -8,6 +8,8 @@ environment:
 
 dependencies:
   audioplayers: ^4.0.1
+  shake: ^1.0.0
+  vibration: ^1.7.6
   flutter:
     sdk: flutter
 
