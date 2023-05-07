@@ -39,7 +39,7 @@ class Balablu {
       onPhoneShake: () async {
         isEnabled = !isEnabled;
         if (await Vibration.hasVibrator() ?? false) {
-          Vibration.vibrate();
+          await Vibration.vibrate();
         }
         if(isEnabled) await _runBalablu(frequency, player);
       },
