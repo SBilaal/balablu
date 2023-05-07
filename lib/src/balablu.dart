@@ -10,7 +10,7 @@ import 'package:vibration/vibration.dart';
 class Frequency {
   const Frequency({required this.milliHertz});
 
-  /// The smaller the number, the lower the frequency. I.e the audio clip sounds less often. 
+  /// The smaller the number, the lower the frequency. I.e the audio clip sounds less often.
   final int milliHertz;
 }
 
