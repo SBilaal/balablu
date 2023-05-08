@@ -55,6 +55,7 @@ class Balablu {
 
   static Future<void> _runBalablu(Frequency frequency, AudioPlayer player) async {
     while (_isEnabled) {
+      // Ensures that the check for the right random number (_expectedNum) is per second.
       await Future.delayed(const Duration(milliseconds: 1000));
       var randomNum = Random().nextInt(frequency.milliHertz.sec - 1) + 1;
 
