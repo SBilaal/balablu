@@ -37,19 +37,20 @@ class Balablu {
   static const _expectedNum = 1;
   static bool _isEnabled = true;
 
-  static Future<void> init({
-    Frequency frequency = Frequencies.veryLow,
-  }) async {
+  static Future<void> init({Frequency frequency = Frequencies.veryLow, bool shakeToDisable = true}) async {
+    WidgetsFlutterBinding.ensureInitialized();
     final player = AudioPlayer();
-    ShakeDetector.autoStart(
-      onPhoneShake: () async {
+    if (shakeToDisable) {
+      ShakeDetector.autoStart(
+        onPhoneShake: () async {
           _isEnabled = !_isEnabled;
           if (await Vibration.hasVibrator() ?? false) {
-          await Vibration.vibrate();
-        }
+            await Vibration.vibrate(duration: _isEnabled ? 500 : 1000);
+          }
           if (_isEnabled) await _runBalablu(frequency, player);
         },
       );
+    }
     await _runBalablu(frequency, player);
   }
 
