@@ -1,3 +1,4 @@
+/// A very ridiculous package for genereating random Balablu sounds
 library balablu;
 
 import 'dart:math';
@@ -6,14 +7,17 @@ import 'package:audioplayers/audioplayers.dart';
 import 'package:shake/shake.dart';
 import 'package:vibration/vibration.dart';
 
-/// Determines how often in a seconds an event occurs
+/// The frequency at which the Balablu audio clip is played.
 class Frequency {
   const Frequency({required this.milliHertz});
 
+  /// The frequency value.
+  ///
   /// The smaller the number, the lower the frequency. I.e the audio clip sounds less often.
   final int milliHertz;
 }
 
+/// [Frequency] constants at specific values.
 class Frequencies {
   Frequencies._();
   static const Frequency veryLow = Frequency(milliHertz: 10);
@@ -24,9 +28,11 @@ class Frequencies {
 }
 
 extension FrequencyToSeconds on int {
+  /// Converts [Frequency]'s milliHertz to seconds
   int get sec => (1000 / this).round();
 }
 
+/// A static class that initializes and controls random Balablu sound generation.
 class Balablu {
   static const _expectedNum = 1;
   static bool isEnabled = true;
@@ -57,7 +63,7 @@ class Balablu {
       }
       await player.play(AssetSource('balablu.mp3'));
 
-      //Lets the audio play completely before starting the next loop.
+      // Lets the audio play completely before starting the next loop.
       await Future.delayed(const Duration(milliseconds: 5000));
     }
   }
