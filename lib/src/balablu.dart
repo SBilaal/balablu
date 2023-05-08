@@ -35,7 +35,7 @@ extension FrequencyToSeconds on int {
 /// A static class that initializes and controls random Balablu sound generation.
 class Balablu {
   static const _expectedNum = 1;
-  static bool isEnabled = true;
+  static bool _isEnabled = true;
 
   static Future<void> init({
     Frequency frequency = Frequencies.veryLow,
@@ -43,18 +43,18 @@ class Balablu {
     final player = AudioPlayer();
     ShakeDetector.autoStart(
       onPhoneShake: () async {
-        isEnabled = !isEnabled;
-        if (await Vibration.hasVibrator() ?? false) {
+          _isEnabled = !_isEnabled;
+          if (await Vibration.hasVibrator() ?? false) {
           await Vibration.vibrate();
         }
-        if(isEnabled) await _runBalablu(frequency, player);
-      },
-    );
+          if (_isEnabled) await _runBalablu(frequency, player);
+        },
+      );
     await _runBalablu(frequency, player);
   }
 
   static Future<void> _runBalablu(Frequency frequency, AudioPlayer player) async {
-    while (isEnabled) {
+    while (_isEnabled) {
       await Future.delayed(const Duration(milliseconds: 1000));
       var randomNum = Random().nextInt(frequency.milliHertz.sec - 1) + 1;
 
