@@ -11,29 +11,58 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A totally useless Flutter package for generating random Balablu sounds.
 
-## Features
+## Overview
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+The **balablu** package provides a simple way to generate random Balablu sounds in your Flutter application (becasuse, of course, that is something we all need🙃). It also allows you to control the frequency at which the audio clip is played and provides an option to disable the sound by shaking the device (nifty, that.😌).
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+On Android, inlcude the VIBRATE permission in AndroidManifest.xml:
+```xml
+<uses-permission android:name="android.permission.VIBRATE"/>
 ```
 
-## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Import the **balablu** package:
+
+```dart
+import 'package:balablu/balablu.dart';
+```
+
+Initialize Balablu sound generation:
+
+```dart
+await Balablu.init();
+```
+
+This will initialize the Balablu sound generator with the default settings. The audio clip will be played at a very low frequency.
+
+You can customize the frequency using the `Frequency` class. The smaller the frequency value, the fewer times the audio clip is played. The `Frequencies` class provides some predefined frequency constants:
+
+* **Frequencies.veryLow**
+* **Frequencies.low**
+* **Frequencies.medium**
+* **Frequencies.high**
+* **Frequencies.veryHigh**
+
+You can also pass a `Frequency` object to the `init()` method to set a custom frequency:
+
+```dart
+await Balablu.init(frequency: Frequencies.high);
+```
+
+By default, shaking the device will toggle the sound on or off. If you want to disable this feature, you can set the `shakeToDisable` parameter to `false`:
+
+```dart
+await Balablu.init(shakeToDisable: false);
+```
+
+
+## License
+TODO:This package is licensed under the MIT License. See the LICENSE file for more details.
+
+## Issues and Feedback
+TODO:Please file issues to send feedback or report a bug. Thank you!
