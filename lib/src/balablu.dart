@@ -2,6 +2,7 @@
 library balablu;
 
 import 'dart:math';
+import 'package:flutter/widgets.dart';
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:shake/shake.dart';
