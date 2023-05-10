@@ -45,8 +45,12 @@ class Balablu {
       ShakeDetector.autoStart(
         onPhoneShake: () async {
           _isEnabled = !_isEnabled;
-          if (await Vibration.hasVibrator() ?? false) {
-            await Vibration.vibrate(duration: _isEnabled ? 500 : 1000);
+          try {
+            if (await Vibration.hasVibrator() ?? false) {
+              await Vibration.vibrate(duration: _isEnabled ? 500 : 1000);
+            }
+          } catch (e) {
+            i1.log('Unable to vibrate.\n', error: e);
           }
           if (_isEnabled) await _runBalablu(frequency, player);
         },
@@ -66,7 +70,11 @@ class Balablu {
       }
       // For whatever reason, assets need to be prefixed with 'packages/<package-name>/'
       // otherwise, an error is thrown.
-      await player.play(AssetSource('packages/balablu/assets/balablu.mp3'));
+      try {
+        await player.play(AssetSource('packages/balablu/assets/balablu.mp3'));
+      } catch (e) {
+        i1.log('Unable to play asset.\n', error: e);
+      }
 
       // Lets the audio play completely before starting the next loop.
       await Future.delayed(const Duration(milliseconds: 5000));
