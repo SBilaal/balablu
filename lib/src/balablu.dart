@@ -68,7 +68,7 @@ class Balablu {
       if (randomNum != _expectedNum) {
         continue;
       }
-      // For whatever reason, assets need to be prefixed with 'packages/<package-name>/'
+      // For whatever reason, an asset's path need to be prefixed with 'packages/<package-name>/'
       // otherwise, an error is thrown.
       try {
         await player.play(AssetSource('packages/balablu/assets/balablu.mp3'));
