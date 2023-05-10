@@ -54,7 +54,7 @@ You can also pass a `Frequency` object to the `init()` method to set a custom fr
 await Balablu.init(frequency: Frequencies.high);
 ```
 
-By default, shaking the device will toggle the sound on or off. If you want to disable this feature, you can set the `shakeToDisable` parameter to `false`:
+By default, shaking the device will toggle the sound on or off. When the device is shook, it vibrates for one second to indicate disabling, and half a second to indicate enabling. If you want to disable this feature, you can set the `shakeToDisable` parameter to `false`:
 
 ```dart
 await Balablu.init(shakeToDisable: false);
@@ -62,7 +62,7 @@ await Balablu.init(shakeToDisable: false);
 
 
 ## License
-TODO:This package is licensed under the MIT License. See the LICENSE file for more details.
+TODO:This package is licensed under the MIT License. See the [LICENSE](https://github.com/SBilaal/balablu/blob/main/LICENSE) file for more details.
 
 ## Issues and Feedback
-TODO:Please file issues to send feedback or report a bug. Thank you!
+TODO:Please file [issues](https://github.com/SBilaal/balablu/issues) to send feedback or report a bug. Thank you!
