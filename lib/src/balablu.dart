@@ -40,7 +40,7 @@ class Balablu {
 
   static void init({Frequency frequency = Frequencies.veryLow, bool shakeToDisable = true}) async {
     WidgetsFlutterBinding.ensureInitialized();
-    final player = AudioPlayer();
+    final player = AudioPlayer()..audioCache = AudioCache(prefix: '');
     if (shakeToDisable) {
       ShakeDetector.autoStart(
         onPhoneShake: () async {
