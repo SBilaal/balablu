@@ -64,7 +64,9 @@ class Balablu {
       if (randomNum != _expectedNum) {
         continue;
       }
-      await player.play(AssetSource('balablu.mp3'));
+      // For whatever reason, assets need to be prefixed with 'packages/<package-name>/'
+      // otherwise, an error is thrown.
+      await player.play(AssetSource('packages/balablu/assets/balablu.mp3'));
 
       // Lets the audio play completely before starting the next loop.
       await Future.delayed(const Duration(milliseconds: 5000));
