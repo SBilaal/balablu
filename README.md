@@ -65,7 +65,7 @@ await Balablu.init(shakeToDisable: false);
 
 
 ## License
-This package is licensed under the MIT License. See the [LICENSE](https://github.com/SBilaal/balablu/blob/main/LICENSE) file for more details.
+This package is licensed under the BSD-2 License. See the [LICENSE](https://github.com/SBilaal/balablu/blob/main/LICENSE) file for more details.
 
 ## Issues and Feedback
 Please file [issues](https://github.com/SBilaal/balablu/issues) to send feedback or report a bug. Thank you!
