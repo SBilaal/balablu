@@ -2,7 +2,7 @@ import 'package:balablu/balablu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  Balablu.init();
+  Balablu.init(frequency: Frequencies.veryHigh);
   runApp(MyApp());
 }
 
