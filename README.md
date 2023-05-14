@@ -17,6 +17,7 @@ A totally useful Flutter package for generating random Balablu sounds.
 
 The **balablu** package provides a simple way to generate random Balablu sounds in your Flutter application (very crucial stuff for your app you know. Absolutely not useless🙃.). It also lets you control the frequency at which the audio clip is played and provides an option to disable the sound by shaking the device (nifty, that.😌).
 
+![Balablu GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDY0ZDZhNjU2ZGM1NzkwMDZkYWE0YWEzNDMwYjg2OGZiMGEwMjViNCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1KS8nCeEfuYst81uuH/giphy.gif)
 
 ## Usage
 
