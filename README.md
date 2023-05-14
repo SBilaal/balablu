@@ -43,7 +43,7 @@ Initialize Balablu sound generation:
 await Balablu.init();
 ```
 
-This will initialize the Balablu sound generator with the default settings. The audio clip will be played at a very low frequency.
+This initializes the Balablu sound generator with the default settings. The audio clip will be played at a very low frequency.
 
 You can customize the frequency using the `Frequency` class. The smaller the frequency value, the fewer times the audio clip is played. The `Frequencies` class provides some predefined frequency constants:
 
@@ -60,7 +60,7 @@ You can also pass a `Frequency` object to the `init()` method to set a custom fr
 await Balablu.init(frequency: Frequency(milliHertz: 2));
 ```
 
-By default, shaking the device will toggle the sound on or off. When the device is shook, it vibrates for one second to indicate disabling, and half a second to indicate enabling. 
+By default, shaking the device will toggle the sound on or off. When the device is shook, it vibrates for one second to indicate disabling and half a second to indicate enabling. 
 
 If you want to disable this feature, you can set the `shakeToDisable` parameter to `false`:
 
