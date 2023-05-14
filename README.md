@@ -11,7 +11,7 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-A totally useless Flutter package for generating random Balablu sounds.
+A totally useful Flutter package for generating random Balablu sounds.
 
 ## Overview
 
