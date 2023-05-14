@@ -19,13 +19,17 @@ The **balablu** package provides a simple way to generate random Balablu sounds 
 
 ![Balablu GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDY0ZDZhNjU2ZGM1NzkwMDZkYWE0YWEzNDMwYjg2OGZiMGEwMjViNCZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/1KS8nCeEfuYst81uuH/giphy.gif)
 
+## Requirements
+On Android:
+- Include the VIBRATE permission in AndroidManifest.xml:
+    ```xml
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    ```
+
+- Set `compileSDKVersion` to 33 in **android\app\build.gradle**.
+
+
 ## Usage
-
-On Android, inlcude the VIBRATE permission in AndroidManifest.xml:
-```xml
-<uses-permission android:name="android.permission.VIBRATE"/>
-```
-
 
 Import the **balablu** package:
 
