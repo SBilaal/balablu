@@ -1,6 +1,6 @@
 name: balablu
 description: A package that randomly plays the viral Balablu audio clip of Bola Ahmed Tinubu(BAT).
-version: 0.0.1
+version: 0.1.0
 
 environment:
   sdk: '>=2.18.6 <3.0.0'
