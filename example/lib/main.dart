@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         ),
         body: const Center(
           child: Text(
-            'Shake your device to toggle the Balablu sound!',
+            'Shake your device to enable/disable the Balablu sound!',
             style: TextStyle(fontSize: 20),
           ),
         ),
