@@ -1,1 +1,1 @@
-export 'package:balablu/src/balablu.dart' show Balablu, Frequency, Frequencies;
+export 'package:balablu/src/balablu.dart' show Balablu, Frequency, Frequencies, WidgetFlutterBinding;
